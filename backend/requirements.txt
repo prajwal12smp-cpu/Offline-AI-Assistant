@@ -5,3 +5,9 @@ ollama
 pydantic
 pypdf
 python-multipart
+passlib[bcrypt]
+PyJWT
+bcrypt
+sqlalchemy
+pydantic-settings
+python-dotenv
