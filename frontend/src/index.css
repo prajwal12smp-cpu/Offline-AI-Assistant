@@ -1,0 +1,155 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 220 25% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 10%;
+
+    --primary: 173 58% 39%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 220 25% 10%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 10% 46%;
+
+    --accent: 173 40% 94%;
+    --accent-foreground: 173 58% 25%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 173 58% 39%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 220 20% 97%;
+    --sidebar-foreground: 220 25% 10%;
+    --sidebar-primary: 173 58% 39%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 173 40% 94%;
+    --sidebar-accent-foreground: 173 58% 25%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 173 58% 39%;
+
+    --gradient-start: 173 58% 39%;
+    --gradient-end: 199 89% 48%;
+    --surface-glass: 0 0% 100%;
+  }
+
+  .dark {
+    /* Deep charcoal background */
+    --background: 240 5% 4%;
+    --foreground: 210 10% 98%;
+
+    --card: 240 5% 6%;
+    --card-foreground: 210 10% 98%;
+
+    --popover: 240 5% 6%;
+    --popover-foreground: 210 10% 98%;
+
+    /* Primary is Silver/Metallic */
+    --primary: 240 5% 85%;
+    --primary-foreground: 240 10% 10%;
+
+    --secondary: 240 5% 12%;
+    --secondary-foreground: 210 10% 98%;
+
+    --muted: 240 5% 15%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 240 5% 20%;
+    --accent-foreground: 210 10% 98%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 5% 20%;
+    --input: 240 5% 20%;
+    --ring: 240 5% 85%;
+
+    --sidebar-background: 240 5% 6%;
+    --sidebar-foreground: 210 10% 98%;
+    --sidebar-primary: 240 5% 85%;
+    --sidebar-primary-foreground: 240 10% 10%;
+    --sidebar-accent: 240 5% 18%;
+    --sidebar-accent-foreground: 210 10% 98%;
+    --sidebar-border: 240 5% 20%;
+    --sidebar-ring: 240 5% 85%;
+
+    --gradient-start: 240 5% 85%;
+    --gradient-end: 240 5% 50%;
+    --surface-glass: 240 5% 8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    @apply bg-zinc-900/60 backdrop-blur-2xl border border-zinc-600/30 shadow-[0_8px_30px_rgb(0,0,0,0.8)] transition-all duration-300;
+  }
+  .glass-card:hover {
+    @apply border-zinc-400/50 shadow-[0_8px_30px_rgba(255,255,255,0.05)];
+  }
+  .glass-panel {
+    @apply bg-zinc-900/40 backdrop-blur-xl border border-zinc-500/20 rounded-2xl;
+  }
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-b from-white via-zinc-300 to-zinc-500 drop-shadow-sm;
+  }
+  .gradient-bg {
+    @apply bg-gradient-to-br from-zinc-100 via-zinc-300 to-zinc-400 text-black border border-white/50;
+  }
+  button.gradient-bg {
+    position: relative;
+    overflow: hidden;
+  }
+  button.gradient-bg::after {
+    content: "";
+    position: absolute;
+    top: 0; left: -100%; width: 50%; height: 100%;
+    background: linear-gradient(to right, transparent, rgba(255,255,255,0.8), transparent);
+    transform: skewX(-20deg);
+    transition: left 0.6s ease;
+  }
+  button.gradient-bg:hover::after {
+    left: 150%;
+  }
+  .gradient-bg-subtle {
+    @apply bg-gradient-to-br from-zinc-800/80 to-zinc-950 border border-zinc-600/30;
+  }
+  .glow-primary {
+    box-shadow: 0 0 25px rgba(220, 220, 225, 0.2);
+    transition: box-shadow 0.3s ease;
+  }
+  .glow-primary:hover {
+    box-shadow: 0 0 35px rgba(255, 255, 255, 0.4);
+  }
+  .glow-accent {
+    box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+  }
+  .antigravity-bg {
+    @apply bg-[#08080a];
+  }
+}
