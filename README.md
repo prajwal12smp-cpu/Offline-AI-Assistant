@@ -172,10 +172,10 @@ npm run dev
 
 ## 👥 Team
 
-**Sadvika Y**
-**Praneeth M**
-**P Vaibhav**
-**Prajwal Shivashimpar**
+- **Sadvika Y**
+- **Praneeth M**
+- **P Vaibhav**
+- **Prajwal Shivashimpar**
 
 
 ---
